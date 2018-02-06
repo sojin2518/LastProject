@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <!-- 구글맵스 api 자바스크립트 라이브러리 //key="부여받은 키 입력" -->
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBVdsh03y3J1eohdKL3pOsjo8FcIroFt9Q"></script>
+
+<script>
+//맵 초기화 해주려고 함수 만듦
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(37.250943, 127.028344), //위도, 경도로 맵의 중앙을 잡아줌
+    zoom:5, 
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  //id가 googlemap인 div태그안에 새로운 맵을 만드는 코드임<mapProp이용>
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+//dom리스너(?)를 추가하여 페이지가 로드될 때, initialize()함수가 실행되게 한다
+</script>
+
+</head>
+ 
+<body>
+<!-- 지도를 담기 위해서 div 태그 사용/ 사이즈 설정 -->
+<div id="googleMap" style="width:500px;height:380px;"></div>
+</body>
+ 
+</html>
+
+
+<!-- http://palpit.tistory.com/category/Web/Google%20Maps 참고 -->
